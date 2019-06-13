@@ -27,7 +27,6 @@ const setAppStyle = () => {
     `
 min-height: ${window.innerHeight}px;
 display: flex;
-flex-direction: column;
 `
   )
 }
