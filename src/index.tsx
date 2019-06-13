@@ -26,7 +26,6 @@ const setAppStyle = () => {
     'style',
     `
 min-height: ${window.innerHeight}px;
-display: flex;
 `
   )
 }
