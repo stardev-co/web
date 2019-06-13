@@ -5,7 +5,9 @@ import { Provider } from 'mobx-react'
 import axios from 'axios'
 import Home from './Home'
 import Offer from './Offer'
+import CreateOffer from './CreateOffer'
 import throttle from 'lodash.throttle'
+require('../static/pdfkit.standalone.js')
 
 axios.defaults.baseURL = 'https://api.stardev.co'
 axios.defaults.baseURL = 'http://localhost:4000'
@@ -36,6 +38,7 @@ ReactDOM.render(
   <Provider {...stores}>
     <Router>
       <Route path="/" component={Home} exact />
+      <Route path="/create" component={CreateOffer} />
       <Route path="/offer/:id" component={Offer} />
     </Router>
   </Provider>,

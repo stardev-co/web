@@ -15,21 +15,7 @@ module.exports = {
     extensions: ['*', '.ts', '.tsx', '.js'],
   },
   module: {
-    rules: [
-      { test: /\.tsx?$/, loader: 'babel-loader' },
-      {
-        test: /\.(pdf|gif|png|jpe?g|svg)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              disable: true,
-            },
-          },
-        ],
-      },
-    ],
+    rules: [{ test: /\.tsx?$/, loader: 'babel-loader' }],
   },
   plugins: [
     new HtmlWebpackPlugin({
