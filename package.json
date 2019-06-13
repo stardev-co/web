@@ -17,9 +17,13 @@
   "author": "Chance Hudson",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.0",
+    "lodash.throttle": "^4.1.1",
     "mobx": "^5.10.1",
+    "mobx-react": "^6.0.3",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -29,6 +33,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@jchancehud/eslint-config-typescript": "0.0.5",
+    "@types/lodash.throttle": "^4.1.6",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.3",
