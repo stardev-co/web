@@ -45,7 +45,7 @@ ReactDOM.render(
   <Provider {...stores}>
     <Router>
       <Route path="/" component={Home} exact />
-      <Route path="/offer/:id" component={Offer} />
+      <Route path="/offer/:id/view" component={Offer} />
       <Route path="/offer/:id/edit" component={EditOffer} />
     </Router>
   </Provider>,
