@@ -5,8 +5,11 @@ import { Provider } from 'mobx-react'
 import axios from 'axios'
 import Home from './Home'
 import Offer from './Offer'
-import CreateOffer from './CreateOffer'
+import EditOffer from './EditOffer'
 import throttle from 'lodash.throttle'
+import OfferStore from './stores/offer'
+import AuthStore from './stores/auth'
+import UserStore from './stores/user'
 require('../static/pdfkit.standalone.js')
 
 axios.defaults.baseURL = 'https://api.stardev.co'
@@ -20,7 +23,11 @@ Object.assign(document.body.style, {
   minHeight: window.innerHeight,
 })
 
-const stores = {}
+const stores = {
+  offer: new OfferStore(),
+  user: new UserStore(),
+  auth: new AuthStore(),
+}
 
 const appDiv = document.getElementById('app')
 const setAppStyle = () => {
@@ -38,8 +45,8 @@ ReactDOM.render(
   <Provider {...stores}>
     <Router>
       <Route path="/" component={Home} exact />
-      <Route path="/create" component={CreateOffer} />
       <Route path="/offer/:id" component={Offer} />
+      <Route path="/offer/:id/edit" component={EditOffer} />
     </Router>
   </Provider>,
   appDiv
