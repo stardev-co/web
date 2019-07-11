@@ -13,7 +13,7 @@ import UserStore from './stores/user'
 require('../static/pdfkit.standalone.js')
 
 axios.defaults.baseURL = 'https://api.stardev.co'
-axios.defaults.baseURL = 'http://localhost:4000'
+// axios.defaults.baseURL = 'http://localhost:4000'
 axios.defaults.headers['content-type'] = 'application/json'
 
 Object.assign(document.body.style, {

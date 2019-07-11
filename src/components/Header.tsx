@@ -1,9 +1,12 @@
 import React from 'react'
 import AuthView from './AuthView'
+import Button from './Button'
+import Colors from '../Colors'
 
 export default class Header extends React.Component<{}> {
   state = {
     showingAuthView: false,
+    mouseOverLogo: false,
   }
   render() {
     return (
@@ -14,28 +17,47 @@ export default class Header extends React.Component<{}> {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'space-around',
+            flex: 1,
+            justifyContent: 'space-between',
             alignItems: 'center',
             height: 30,
+            borderBottom: `1px solid ${Colors.black}`,
+            backgroundColor: Colors.whiteLight,
+            marginBottom: 8,
           }}
         >
-          <span
-            style={{ color: 'black', fontWeight: 'bold', fontFamily: 'menlo' }}
-          >
-            *dev
-          </span>
-          <button
-            title="Login or Signup"
+          <div
             style={{
+              backgroundColor: Colors.purple,
+              borderRadius: 10,
               padding: 8,
               margin: 8,
-              backgroundColor: 'blue',
-              color: 'white',
+              minWidth: 70,
+              textAlign: 'center',
             }}
+            onMouseOver={() =>
+              this.setState({
+                mouseOverLogo: true,
+              })
+            }
+            onMouseOut={() => this.setState({ mouseOverLogo: false })}
+          >
+            <span
+              style={{
+                color: Colors.white,
+                fontWeight: 'bold',
+                fontFamily: 'menlo',
+              }}
+            >
+              {this.state.mouseOverLogo ? 'stardev' : '*dev'}
+            </span>
+          </div>
+          <Button
+            title="Login or Signup"
             onClick={() => this.setState({ showingAuthView: true })}
           >
             Login or Signup
-          </button>
+          </Button>
         </div>
       </>
     )
