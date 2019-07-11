@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "alias": ["stardev.co"],
+  "builds": [
+    {
+      "src": "build/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "build/index.html"
+    },
+    {
+      "src": "/main.js",
+      "dest": "build/main.js"
+    }
+  ]
+}
