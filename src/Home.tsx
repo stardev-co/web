@@ -1,17 +1,13 @@
 import React from 'react'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import Button from './components/Button'
 import Colors from './Colors'
 
 export default class Home extends React.Component<{}> {
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <>
         <Header />
         <div style={{ alignSelf: 'center' }}>
           <Button title="My Account" onClick={() => {}} />
@@ -36,7 +32,8 @@ export default class Home extends React.Component<{}> {
             <Button title="Create Invoice" onClick={() => {}} />
           </div>
         </div>
-      </div>
+        <Footer />
+      </>
     )
   }
 }

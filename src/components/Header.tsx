@@ -17,10 +17,9 @@ export default class Header extends React.Component<{}> {
         <div
           style={{
             display: 'flex',
-            flex: 1,
             justifyContent: 'space-between',
             alignItems: 'center',
-            height: 30,
+            minHeight: 30,
             borderBottom: `1px solid ${Colors.black}`,
             backgroundColor: Colors.whiteLight,
             marginBottom: 8,

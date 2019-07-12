@@ -6,10 +6,12 @@ import axios from 'axios'
 import Home from './Home'
 import Offer from './Offer'
 import EditOffer from './EditOffer'
+import Invoice from './Invoice'
 import throttle from 'lodash.throttle'
 import OfferStore from './stores/offer'
 import AuthStore from './stores/auth'
 import UserStore from './stores/user'
+import InvoiceStore from './stores/invoice'
 require('../static/pdfkit.standalone.js')
 
 axios.defaults.baseURL = 'https://api.stardev.co'
@@ -27,6 +29,7 @@ const stores = {
   offer: new OfferStore(),
   user: new UserStore(),
   auth: new AuthStore(),
+  invoice: new InvoiceStore(),
 }
 
 const appDiv = document.getElementById('app')
@@ -35,6 +38,8 @@ const setAppStyle = () => {
     'style',
     `
 min-height: ${window.innerHeight}px;
+display: flex;
+flex-direction: column;
 `
   )
 }
@@ -47,6 +52,7 @@ ReactDOM.render(
       <Route path="/" component={Home} exact />
       <Route path="/offer/:id/view" component={Offer} />
       <Route path="/offer/:id/edit" component={EditOffer} />
+      <Route path="/invoice/:id" component={Invoice} />
     </Router>
   </Provider>,
   appDiv
