@@ -13,6 +13,10 @@
       "dest": "build/index.html"
     },
     {
+      "src": "/invoice/([a-zA-Z0-9]+)",
+      "dest": "build/index.html"
+    },
+    {
       "src": "/main.js",
       "dest": "build/main.js"
     }
